@@ -26,4 +26,12 @@ public class ProductService {
 
         return productRepository.save(new Product(id, title, description, SKU, productCombo));
     }
+
+    public Iterable<Product> listProducts() {
+        return productRepository.findAll();
+    }
+
+    public long totalProducts() {
+        return productRepository.count();
+    }
 }
