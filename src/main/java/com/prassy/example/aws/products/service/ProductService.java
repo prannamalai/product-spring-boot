@@ -24,6 +24,6 @@ public class ProductService {
         ProductCombo productCombo = productComboRepository.findById(productComboSKU)
                 .orElseThrow(() -> new RuntimeException("Package Combo doesn't exist"));
 
-        return new Product(id, title, description, SKU, productCombo);
+        return productRepository.save(new Product(id, title, description, SKU, productCombo));
     }
 }
